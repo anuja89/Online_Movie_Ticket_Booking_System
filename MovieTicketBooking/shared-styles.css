@@ -1,0 +1,182 @@
+/* ============================================================
+   CineBook — Shared Design System
+   Palette: Deep Space Navy / Warm Gold / Charcoal / Off-White
+   ============================================================ */
+
+/* Google Fonts import (embedded via @import for offline compat fallback) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --navy:      #0d0f1c;
+  --navy-mid:  #151829;
+  --navy-card: #1c1f35;
+  --gold:      #e8b84b;
+  --gold-light:#f5d07a;
+  --crimson:   #c0392b;
+  --crimson-hover: #a93226;
+  --text:      #e8eaf0;
+  --text-muted:#8a8fa8;
+  --border:    rgba(232,184,75,0.20);
+  --shadow:    0 8px 32px rgba(0,0,0,0.55);
+  --radius:    10px;
+  --radius-lg: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--navy);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── Brand Header ── */
+.cb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: var(--navy-mid);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.cb-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.cb-logo span { color: var(--text); font-weight: 400; }
+
+/* ── Cards ── */
+.cb-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  box-shadow: var(--shadow);
+}
+
+/* ── Form Elements ── */
+.cb-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.cb-input {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--navy-mid);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.cb-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(232,184,75,0.18);
+}
+
+/* ── Buttons ── */
+.cb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all .2s;
+}
+.cb-btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+.cb-btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(232,184,75,0.35); }
+.cb-btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.cb-btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+.cb-btn-danger {
+  background: var(--crimson);
+  color: #fff;
+}
+.cb-btn-danger:hover { background: var(--crimson-hover); transform: translateY(-1px); }
+.cb-btn-ghost {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  padding: 9px 20px;
+}
+.cb-btn-ghost:hover { background: rgba(255,255,255,0.12); color: var(--text); }
+
+/* ── Validation Errors ── */
+.field-error { color: #ff6b6b; font-size: 0.78rem; margin-top: 4px; display: block; }
+
+/* ── Page Titles ── */
+.cb-page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.cb-page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Top Navbar actions area ── */
+.cb-nav-actions { display: flex; gap: 12px; align-items: center; }
+
+/* ── Divider ── */
+.cb-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* ── Badge ── */
+.cb-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cb-badge-gold { background: rgba(232,184,75,0.15); color: var(--gold); }
+
+/* ── Grid helpers ── */
+.cb-center-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #0d0f1c 0%, #1a1d30 100%);
+}
